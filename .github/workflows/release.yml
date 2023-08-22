@@ -27,8 +27,8 @@ jobs:
       run: xscgen -n "|http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd=Xml.Schematy.Dziedzinowe.Mf.FA2" http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd
       
     - name: Dotnet pack
-      working-directory: /
-      run: dotnet pack -c Release -p:Version=${GITHUB_REF##*/v} .\KSeF.csproj
+      working-directory: ../
+      run: dotnet pack -c Release -p:Version=${GITHUB_REF##*/v} KSeF.csproj
 
     - name: Dotnet Nuget Push   
       working-directory: /

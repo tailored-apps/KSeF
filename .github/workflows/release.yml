@@ -18,7 +18,6 @@ jobs:
         dotnet-version: 7.0.x
 
     - name: Dotnet install tools 
-      working-directory: /
       run: dotnet tool install --global dotnet-xscgen --version 2.0.878  
       
       
@@ -27,14 +26,11 @@ jobs:
       run: xscgen -n "|http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd=Xml.Schematy.Dziedzinowe.Mf.FA2" http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd
       
     - name: Dotnet pack
-      working-directory: /
       run: ls -la
       
     - name: Dotnet pack
-      working-directory: ../
       run: dotnet pack -c Release -p:Version=${GITHUB_REF##*/v} 
 
     - name: Dotnet Nuget Push   
-      working-directory: /
       run: dotnet nuget push KSeF.*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
       continue-on-error: false

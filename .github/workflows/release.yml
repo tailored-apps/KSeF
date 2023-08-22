@@ -23,7 +23,7 @@ jobs:
       
       
     - name: Dotnet generate class from xsd 
-      working-directory: /
+      working-directory: generated/
       run: xscgen -n "|http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd=Xml.Schematy.Dziedzinowe.Mf.FA2" http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd
       
     - name: Dotnet pack

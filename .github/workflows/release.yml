@@ -28,7 +28,7 @@ jobs:
       
     - name: Dotnet pack
       working-directory: /
-      run: dotnet pack -c Release -p:Version=${GITHUB_REF##*/v}
+      run: dotnet pack -c Release -p:Version=${GITHUB_REF##*/v} .\KSeF.csproj
 
     - name: Dotnet Nuget Push   
       working-directory: /

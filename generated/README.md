@@ -1,1 +1,1 @@
-this is folder placeholder during build we generate from schema c# classes
+this is folder placeholder, during build we generate here c# classes from schema 

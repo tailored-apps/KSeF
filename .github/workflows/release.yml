@@ -15,14 +15,14 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: 10.0.x
 
     - name: Dotnet install tools 
       run: dotnet tool install --global dotnet-xscgen
       
     - name: Dotnet generate class from xsd 
       working-directory: generated/
-      run: xscgen -n "|http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd=Xml.Schematy.Dziedzinowe.Mf.FA2" http://crd.gov.pl/wzor/2023/06/29/12648/schemat.xsd
+      run: xscgen -n "|http://crd.gov.pl/wzor/2025/06/25/13775/schemat.xsd=KSeF.Faktura" http://crd.gov.pl/wzor/2025/06/25/13775/schemat.xsd
       
     - name: Dotnet pack
       run: dotnet pack -c Release -p:Version=${GITHUB_REF##*/v} 
